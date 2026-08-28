@@ -199,22 +199,27 @@ ul { padding: 0; margin: 0; list-style: none; }
   letter-spacing: 0.01em;
   padding: 6px 2px;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  color: var(--white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  transition: border-color 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
 }
 .nav-list a:hover { border-bottom-color: var(--peach); }
-.nav-list a.nav-highlight { color: var(--blue-600); }
+.nav-list a.nav-highlight { color: var(--peach); }
+.site-header.is-scrolled .nav-list a { color: var(--black); text-shadow: none; }
+.site-header.is-scrolled .nav-list a.nav-highlight { color: var(--blue-600); }
 
 .lang-switch {
   display: flex;
   gap: 3px;
-  border: 1.5px solid var(--black);
+  border: 1.5px solid var(--white);
   border-radius: 999px;
   padding: 3px;
+  transition: border-color 0.2s ease;
 }
 .lang-switch button {
   border: none;
   background: transparent;
-  color: var(--black);
+  color: var(--white);
   font-family: var(--font-body);
   font-size: 0.78rem;
   font-weight: 900;
@@ -224,7 +229,10 @@ ul { padding: 0; margin: 0; list-style: none; }
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease;
 }
-.lang-switch button[aria-pressed="true"] { background: var(--black); color: var(--white); }
+.lang-switch button[aria-pressed="true"] { background: var(--white); color: var(--black); }
+.site-header.is-scrolled .lang-switch { border-color: var(--black); }
+.site-header.is-scrolled .lang-switch button { color: var(--black); }
+.site-header.is-scrolled .lang-switch button[aria-pressed="true"] { background: var(--black); color: var(--white); }
 
 /* --------------------------------------------------------------------------
    Buttons
@@ -551,7 +559,18 @@ ul { padding: 0; margin: 0; list-style: none; }
   }
   .main-nav.open { display: flex; }
   .nav-list { flex-direction: column; gap: 2px; }
-  .nav-list a { display: block; padding: 14px 0; font-size: 1rem; border-bottom: 1px solid var(--hairline); }
+  .nav-list a {
+    display: block;
+    padding: 14px 0;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--hairline);
+    color: var(--black);
+    text-shadow: none;
+  }
+  .nav-list a.nav-highlight { color: var(--blue-600); }
+  .lang-switch { border-color: var(--black); }
+  .lang-switch button { color: var(--black); }
+  .lang-switch button[aria-pressed="true"] { background: var(--black); color: var(--white); }
   .lang-switch { margin-top: 16px; align-self: flex-start; }
 }
 
