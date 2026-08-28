@@ -1,0 +1,6 @@
+<!-- LOGO_PLACEHOLDER — csere a végleges logóra érkezéskor / replace with final logo asset when delivered -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Final Table Catering placeholder mark">
+  <circle cx="32" cy="32" r="31" fill="#0c2f2d" stroke="#c9a05a" stroke-width="2"/>
+  <text x="32" y="42" text-anchor="middle" font-family="Georgia, 'Cormorant Garamond', serif" font-size="34" font-weight="700" fill="#d9b876">T</text>
+  <line x1="16" y1="19" x2="48" y2="19" stroke="#d9b876" stroke-width="3" stroke-linecap="round"/>
+</svg>
