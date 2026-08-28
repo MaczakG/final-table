@@ -442,6 +442,29 @@ img { max-width: 100%; display: block; }
 .page-hero p { color: var(--almond-200); max-width: 60ch; margin: 0 auto; }
 
 /* --------------------------------------------------------------------------
+   Section photo band
+   -------------------------------------------------------------------------- */
+.section-photo {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  border-bottom: 3px solid var(--champagne-500);
+}
+.section-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.section-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(6,32,31,0.15) 0%, rgba(6,32,31,0.35) 100%);
+}
+
+/* --------------------------------------------------------------------------
    Sections
    -------------------------------------------------------------------------- */
 section { padding: 72px 0; }
@@ -624,6 +647,7 @@ table.simple tr:last-child td { border-bottom: none; }
   .footer-grid { grid-template-columns: 1fr; }
   .cta-band { flex-direction: column; align-items: flex-start; }
   .strip-48h .strip-track { gap: 22px; font-size: 0.92rem; }
+  .section-photo { height: 220px; }
 }
 
 @media (max-width: 480px) {

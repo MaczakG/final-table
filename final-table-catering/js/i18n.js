@@ -57,6 +57,7 @@ const I18N = {
       heroEyebrow: "Final Table Catering",
       heroTitle: "Kifogástalan gasztronómia, ahol és amikor kell",
       heroLead: "A Final Table Budapest étterem catering divíziójaként ugyanazt a konyhai igényességet visszük ki rendezvényeitekre — gyors szervezéssel, akár 48 órán belüli kiszolgálással.",
+      heroPhotoAlt: "Gyertyafényes, elegánsan megterített asztal pezsgőspoharakkal és porcelánnal egy Final Table Catering rendezvényen",
       heroPanelTitle: "Miért a Final Table Catering?",
       heroPanelItems: [
         "Akár 48 órán belüli teljes kiszolgálás",
@@ -81,6 +82,7 @@ const I18N = {
     about: {
       heroTitle: "Rólunk",
       heroLead: "A Final Table Catering a Final Table Budapest étterem catering divíziója — önálló márka, közös gasztronómiai gyökerekkel.",
+      teamPhotoAlt: "A Final Table Budapest konyhai csapata együtt dolgozik, gourmet fogásokat tálal fel a profi konyhában",
       storyEyebrow: "Történetünk",
       storyTitle: "A tányértól a rendezvényig",
       storyText1: "A Final Table Budapest éttermet a részletekre való odafigyelés és a kifogástalan alapanyag-válogatás jellemzi. Amikor egyre több vendégünk kérte, hogy ezt az élményt rendezvényeire is vigyük ki, megszületett a Final Table Catering.",
@@ -102,6 +104,7 @@ const I18N = {
     lastMinute: {
       heroTitle: "Last Minute Rendezvény",
       heroLead: "Rövid határidő? Nálunk ez nem probléma — akár 48 órán belül teljes körű catering kiszolgálást biztosítunk.",
+      servicePhotoAlt: "Felszolgáló elegánsan tálalt előételekkel teli tálcát visz egy rendezvényen",
       badgeHeadline: "48 óra a hívástól az asztalig",
       badgeText: "Ez a Final Table Catering alapígérete: gyors reagálás, precíz szervezés, kifogástalan kiszolgálás — időhúzás nélkül.",
       howEyebrow: "Így dolgozunk",
@@ -127,6 +130,7 @@ const I18N = {
     events: {
       heroTitle: "Rendezvények",
       heroLead: "Esküvőtől a vállalati gálavacsoráig — a Final Table Catering minden alkalomhoz igazodó menüt és kiszolgálást kínál.",
+      hallPhotoAlt: "Elegánsan berendezett rendezvényterem gondosan megterített asztalokkal és virágdekorációval",
       typesEyebrow: "Alkalmak",
       typesTitle: "Milyen rendezvényekre specializálódtunk",
       type1: "Esküvő",
@@ -157,7 +161,7 @@ const I18N = {
       step1Text: "Hívjon telefonon, vagy írjon emailt az esemény alapadataival.",
       step2Title: "Egyeztetünk a részletekről",
       step2Text: "Átbeszéljük a vendégszámot, a helyszínt, az időpontot és az igényeket.",
-      step3Title: "Megüldjük az ajánlatot",
+      step3Title: "Megküldjük az ajánlatot",
       step3Text: "Testreszabott menüjavaslatot és árajánlatot kap, gyorsan.",
       contactEyebrow: "Elérhetőségeink",
       contactTitle: "Vegye fel velünk a kapcsolatot",
@@ -176,6 +180,7 @@ const I18N = {
     services: {
       heroTitle: "Egyéb szolgáltatások",
       heroLead: "A catering mellett teljes körű rendezvénytámogatást nyújtunk — egy kézből, egyeztetve a menüvel.",
+      barPhotoAlt: "Bartender koktélt készít egy elegáns bárpultnál, rendezvényre szabott itallappal",
       gridEyebrow: "Kínálatunk",
       gridTitle: "Amivel a menün túl is segítünk",
       s1Title: "Menütervezés",
@@ -188,7 +193,7 @@ const I18N = {
       s4Text: "Gyakorlott, egyenruhás csapat a zökkenőmentes kiszolgáláshoz.",
       s5Title: "Rendezvénylogisztika",
       s5Text: "Szállítás, időzítés és helyszíni koordináció a háttérben.",
-      s6Title: "Deszert és cukrászat",
+      s6Title: "Desszert és cukrászat",
       s6Text: "Egyedi desszertasztal és tortakészítés az esemény karakteréhez.",
       ctaTitle: "Kombinálná a szolgáltatásainkat?",
       ctaText: "Egy beszélgetésben összeállítjuk az eseményéhez illő csomagot."
@@ -263,6 +268,7 @@ const I18N = {
       heroEyebrow: "Final Table Catering",
       heroTitle: "Flawless dining, wherever and whenever you need it",
       heroLead: "As the catering division of Final Table Budapest, we bring the same culinary standards to your event — with fast planning and service delivered in as little as 48 hours.",
+      heroPhotoAlt: "Candlelit, elegantly set table with champagne glasses and fine china at a Final Table Catering event",
       heroPanelTitle: "Why Final Table Catering?",
       heroPanelItems: [
         "Full service in as little as 48 hours",
@@ -287,6 +293,7 @@ const I18N = {
     about: {
       heroTitle: "About Us",
       heroLead: "Final Table Catering is the catering division of Final Table Budapest restaurant — its own brand, sharing the same culinary roots.",
+      teamPhotoAlt: "The Final Table Budapest kitchen team working together, plating gourmet dishes in the professional kitchen",
       storyEyebrow: "Our story",
       storyTitle: "From the plate to the event",
       storyText1: "Final Table Budapest is known for its attention to detail and uncompromising choice of ingredients. As more guests asked us to bring that experience to their events, Final Table Catering was born.",
@@ -308,6 +315,7 @@ const I18N = {
     lastMinute: {
       heroTitle: "Last-Minute Event",
       heroLead: "Short notice? Not a problem — we deliver full catering service in as little as 48 hours.",
+      servicePhotoAlt: "A server carries a tray full of elegantly plated appetizers at an event",
       badgeHeadline: "48 hours from call to table",
       badgeText: "This is Final Table Catering's core promise: fast response, precise planning, flawless service — with no delays.",
       howEyebrow: "How we work",
@@ -333,6 +341,7 @@ const I18N = {
     events: {
       heroTitle: "Events",
       heroLead: "From weddings to corporate galas — Final Table Catering offers a tailored menu and service for every occasion.",
+      hallPhotoAlt: "Elegantly decorated event hall with beautifully set tables and floral arrangements",
       typesEyebrow: "Occasions",
       typesTitle: "The events we specialize in",
       type1: "Weddings",
@@ -382,6 +391,7 @@ const I18N = {
     services: {
       heroTitle: "Other Services",
       heroLead: "Beyond catering, we offer full event support — under one roof, coordinated with your menu.",
+      barPhotoAlt: "Bartender preparing a cocktail at an elegant bar counter, styled for an event drinks menu",
       gridEyebrow: "What we offer",
       gridTitle: "How we help beyond the menu",
       s1Title: "Menu planning",
@@ -460,6 +470,14 @@ function ftTranslate(lang) {
         li.textContent = item;
         el.appendChild(li);
       });
+    }
+  });
+
+  document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
+    const key = el.getAttribute("data-i18n-alt");
+    const value = ftResolve(key, lang);
+    if (typeof value === "string") {
+      el.alt = value;
     }
   });
 
