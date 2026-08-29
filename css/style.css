@@ -128,6 +128,22 @@ img { max-width: 100%; display: block; }
   transform: translateX(-50%);
   border-radius: 2px;
 }
+html.js-anim .t-motif::after {
+  animation: tMotifDraw 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+/* Champagne shine sweep across the "T" motif once on load — falls back to
+   the plain solid color on browsers without background-clip:text support. */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  html.js-anim .t-motif {
+    background-image: linear-gradient(100deg, var(--champagne-500) 0%, var(--white) 22%, var(--champagne-500) 44%, var(--champagne-500) 100%);
+    background-size: 260% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: tMotifShine 1.6s cubic-bezier(0.22, 1, 0.36, 1) 0.6s 1 both;
+  }
+}
 
 /* LOGO_PLACEHOLDER — csere a végleges logóra érkezéskor */
 .logo-placeholder {
@@ -226,8 +242,9 @@ img { max-width: 100%; display: block; }
   color: var(--color-on-primary);
   padding: 6px 2px;
   border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease, letter-spacing 0.25s ease;
 }
+.nav-list a:hover { letter-spacing: 0.06em; }
 .nav-list a:hover,
 .nav-list a[aria-current="page"] {
   color: var(--champagne-400);
@@ -273,9 +290,10 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.02em;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background 0.2s ease, color 0.2s ease;
 }
-.btn:hover { transform: translateY(-2px); }
+.btn:hover { transform: translateY(-3px) scale(1.03); }
+.btn:active { transform: translateY(-1px) scale(0.98); }
 
 .btn-champagne {
   background: linear-gradient(135deg, var(--champagne-400), var(--champagne-600));
@@ -452,10 +470,14 @@ img { max-width: 100%; display: block; }
   border-bottom: 3px solid var(--champagne-500);
 }
 .section-photo img {
+  position: absolute;
+  top: -12%;
+  left: 0;
   width: 100%;
-  height: 100%;
+  height: 124%;
   object-fit: cover;
   object-position: center;
+  will-change: transform;
 }
 .section-photo::after {
   content: '';
@@ -494,8 +516,13 @@ section.tight { padding: 48px 0; }
   padding: 30px;
   box-shadow: var(--shadow-soft);
   border-top: 3px solid var(--champagne-500);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
 }
 .card h3 { margin-bottom: 10px; }
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
+}
 
 .card-dark {
   background: var(--teal-800);
@@ -503,9 +530,14 @@ section.tight { padding: 48px 0; }
   border-radius: var(--radius-md);
   padding: 30px;
   border-top: 3px solid var(--champagne-500);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
 }
 .card-dark h3 { color: var(--champagne-300); }
 .card-dark p { color: var(--almond-200); }
+.card-dark:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-strong);
+}
 
 .icon-mark {
   width: 46px; height: 46px;
@@ -519,6 +551,12 @@ section.tight { padding: 48px 0; }
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 16px;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease;
+}
+.card:hover .icon-mark,
+.card-dark:hover .icon-mark {
+  transform: rotate(-8deg) scale(1.1);
+  border-color: var(--champagne-600);
 }
 
 .contact-list {
@@ -654,4 +692,103 @@ table.simple tr:last-child td { border-bottom: none; }
   section { padding: 52px 0; }
   .hero { padding: 64px 0 56px; }
   .card, .card-dark { padding: 22px; }
+}
+
+/* ==========================================================================
+   Motion layer
+   Pure CSS keyframes for on-load hero entrances + the "T" motif shine/draw
+   (see rules above), plus an IntersectionObserver-driven scroll-reveal
+   ([data-animate], toggled by js/animate.js) and a lightweight scroll
+   parallax on the section-photo images. Everything here is scoped under
+   html.js-anim (added by an inline script at the top of <head>) so content
+   stays fully visible if JavaScript is blocked or fails — no FOUC, no
+   stuck-invisible sections. prefers-reduced-motion turns all of it off.
+   ========================================================================== */
+
+@keyframes tMotifDraw {
+  from { width: 0; opacity: 0; }
+  to { width: 1.15em; opacity: 1; }
+}
+
+@keyframes tMotifShine {
+  from { background-position: 100% 0; }
+  to { background-position: 0% 0; }
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero entrance — plain CSS, runs automatically on first paint so it works
+   even without JS. Targets existing hero markup by structure only, no new
+   elements or attributes needed. */
+html.js-anim .hero-grid > div:first-child > * {
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+html.js-anim .hero-grid > div:first-child > *:nth-child(1) { animation-delay: 0.05s; }
+html.js-anim .hero-grid > div:first-child > *:nth-child(2) { animation-delay: 0.15s; }
+html.js-anim .hero-grid > div:first-child > *:nth-child(3) { animation-delay: 0.28s; }
+html.js-anim .hero-grid > div:first-child > *:nth-child(4) { animation-delay: 0.4s; }
+html.js-anim .hero-grid > div:first-child > *:nth-child(5) { animation-delay: 0.5s; }
+html.js-anim .hero-grid .hero-panel {
+  animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+html.js-anim .page-hero h1 {
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+html.js-anim .page-hero > .container > p {
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+}
+html.js-anim .page-hero .badge-48h {
+  animation: heroFadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+/* Scroll-reveal — base hidden state only applies once JS has confirmed it
+   can run (html.js-anim); js/animate.js adds .is-visible via
+   IntersectionObserver as each element scrolls into view. */
+html.js-anim [data-animate] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1), transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+html.js-anim [data-animate].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* prefers-reduced-motion: turn every animation/transition above off and
+   show content in its final state immediately. */
+@media (prefers-reduced-motion: reduce) {
+  html.js-anim .t-motif::after,
+  html.js-anim .t-motif,
+  html.js-anim .hero-grid > div:first-child > *,
+  html.js-anim .hero-grid .hero-panel,
+  html.js-anim .page-hero h1,
+  html.js-anim .page-hero > .container > p,
+  html.js-anim .page-hero .badge-48h {
+    animation: none !important;
+  }
+  html.js-anim [data-animate] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .btn,
+  .btn:hover,
+  .btn:active,
+  .card,
+  .card:hover,
+  .card-dark,
+  .card-dark:hover,
+  .icon-mark,
+  .card:hover .icon-mark,
+  .card-dark:hover .icon-mark,
+  .nav-list a,
+  .section-photo img {
+    transition: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }

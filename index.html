@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js-anim');</script>
 <title>Final Table Catering</title>
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +53,7 @@
 
   <section class="section-alt">
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head center" data-animate>
         <span class="eyebrow" data-i18n="home.introEyebrow"></span>
         <h2 data-i18n="home.introTitle"></h2>
         <div class="divider divider-center"><span class="divider-mark"></span></div>
@@ -63,23 +64,23 @@
 
   <section>
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head center" data-animate>
         <h2 data-i18n="home.teaserTitle"></h2>
       </div>
       <div class="grid grid-3">
-        <a class="card" href="last-minute.html" style="display:block;">
+        <a class="card" href="last-minute.html" style="display:block;" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="home.teaserLastMinuteTitle"></h3>
           <p data-i18n="home.teaserLastMinuteText"></p>
           <span style="color:var(--champagne-600); font-weight:700;" data-i18n="common.readMore"></span>
         </a>
-        <a class="card" href="events.html" style="display:block;">
+        <a class="card" href="events.html" style="display:block;" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="home.teaserEventsTitle"></h3>
           <p data-i18n="home.teaserEventsText"></p>
           <span style="color:var(--champagne-600); font-weight:700;" data-i18n="common.readMore"></span>
         </a>
-        <a class="card" href="services.html" style="display:block;">
+        <a class="card" href="services.html" style="display:block;" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="home.teaserServicesTitle"></h3>
           <p data-i18n="home.teaserServicesText"></p>
@@ -91,7 +92,7 @@
 
   <section>
     <div class="container">
-      <div class="cta-band">
+      <div class="cta-band" data-animate>
         <div>
           <h2 data-i18n="home.ctaTitle"></h2>
           <p data-i18n="home.ctaText" style="margin:0;"></p>
@@ -108,6 +109,7 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/layout.js"></script>
+<script src="js/animate.js"></script>
 <script>ftInitLayout('home');</script>
 </body>
 </html>

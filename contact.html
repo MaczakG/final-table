@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js-anim');</script>
 <title>Kapcsolat — Final Table Catering</title>
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +25,7 @@
 
   <section>
     <div class="container grid grid-2" style="align-items:flex-start;">
-      <div>
+      <div data-animate>
         <span class="eyebrow" data-i18n="contact.infoEyebrow"></span>
         <h2 data-i18n="contact.infoTitle"></h2>
         <ul class="contact-list" style="margin-top:24px;">
@@ -43,7 +44,7 @@
         </ul>
       </div>
 
-      <div class="card-dark">
+      <div class="card-dark" data-animate>
         <h3 data-i18n="contact.hoursLabel" style="color:var(--champagne-300);"></h3>
         <p data-i18n="contact.hoursText"></p>
         <p data-i18n="contact.hoursTextUrgent" style="margin-bottom:22px;"></p>
@@ -56,7 +57,7 @@
 
   <section class="section-alt">
     <div class="container">
-      <div class="cta-band" style="background:linear-gradient(135deg, var(--teal-900), var(--teal-950));">
+      <div class="cta-band" style="background:linear-gradient(135deg, var(--teal-900), var(--teal-950));" data-animate>
         <div>
           <span class="badge-48h">
             <span class="badge-number">48</span>
@@ -76,6 +77,7 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/layout.js"></script>
+<script src="js/animate.js"></script>
 <script>ftInitLayout('contact');</script>
 </body>
 </html>

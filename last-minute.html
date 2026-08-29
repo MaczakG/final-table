@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js-anim');</script>
 <title>Last Minute Rendezvény — Final Table Catering</title>
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +28,7 @@
   </div>
 
   <section class="section-dark">
-    <div class="container" style="text-align:center;">
+    <div class="container" style="text-align:center;" data-animate>
       <span class="badge-48h" style="font-size:1.1rem; padding:16px 30px 16px 20px;">
         <span class="badge-number" style="font-size:2rem;">48</span>
         <span data-i18n="lastMinute.badgeHeadline"></span>
@@ -38,22 +39,22 @@
 
   <section>
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head center" data-animate>
         <span class="eyebrow" data-i18n="lastMinute.howEyebrow"></span>
         <h2 data-i18n="lastMinute.howTitle"></h2>
       </div>
       <div class="grid grid-3">
-        <div class="card">
+        <div class="card" data-animate>
           <span class="eyebrow" data-i18n="lastMinute.step1Time"></span>
           <h3 data-i18n="lastMinute.step1Title"></h3>
           <p data-i18n="lastMinute.step1Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <span class="eyebrow" data-i18n="lastMinute.step2Time"></span>
           <h3 data-i18n="lastMinute.step2Title"></h3>
           <p data-i18n="lastMinute.step2Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <span class="eyebrow" data-i18n="lastMinute.step3Time"></span>
           <h3 data-i18n="lastMinute.step3Title"></h3>
           <p data-i18n="lastMinute.step3Text"></p>
@@ -64,11 +65,11 @@
 
   <section class="section-alt">
     <div class="container grid grid-2" style="align-items:center;">
-      <div>
+      <div data-animate>
         <span class="eyebrow" data-i18n="lastMinute.includedEyebrow"></span>
         <h2 data-i18n="lastMinute.includedTitle"></h2>
       </div>
-      <ul class="hero-panel" style="list-style:none; margin:0; padding:28px; background:var(--color-surface); border:1px solid var(--almond-200); border-radius:var(--radius-lg); display:grid; gap:14px;">
+      <ul class="hero-panel" style="list-style:none; margin:0; padding:28px; background:var(--color-surface); border:1px solid var(--almond-200); border-radius:var(--radius-lg); display:grid; gap:14px;" data-animate>
         <li style="display:flex; gap:10px; color:var(--color-text);"><span style="color:var(--champagne-600); font-weight:700;">&#9670;</span><span data-i18n="lastMinute.included1"></span></li>
         <li style="display:flex; gap:10px; color:var(--color-text);"><span style="color:var(--champagne-600); font-weight:700;">&#9670;</span><span data-i18n="lastMinute.included2"></span></li>
         <li style="display:flex; gap:10px; color:var(--color-text);"><span style="color:var(--champagne-600); font-weight:700;">&#9670;</span><span data-i18n="lastMinute.included3"></span></li>
@@ -79,7 +80,7 @@
 
   <section>
     <div class="container">
-      <div class="cta-band">
+      <div class="cta-band" data-animate>
         <div>
           <h2 data-i18n="lastMinute.ctaTitle"></h2>
           <p data-i18n="lastMinute.ctaText" style="margin:0;"></p>
@@ -97,6 +98,7 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/layout.js"></script>
+<script src="js/animate.js"></script>
 <script>ftInitLayout('lastMinute');</script>
 </body>
 </html>

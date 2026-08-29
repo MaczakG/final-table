@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js-anim');</script>
 <title>Ajánlatkérés — Final Table Catering</title>
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,22 +31,22 @@
 
   <section>
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head center" data-animate>
         <span class="eyebrow" data-i18n="quote.stepsEyebrow"></span>
         <h2 data-i18n="quote.stepsTitle"></h2>
       </div>
       <div class="grid grid-3">
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">1</div>
           <h3 data-i18n="quote.step1Title"></h3>
           <p data-i18n="quote.step1Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">2</div>
           <h3 data-i18n="quote.step2Title"></h3>
           <p data-i18n="quote.step2Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">3</div>
           <h3 data-i18n="quote.step3Title"></h3>
           <p data-i18n="quote.step3Text"></p>
@@ -56,18 +57,18 @@
 
   <section class="section-alt">
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head center" data-animate>
         <span class="eyebrow" data-i18n="quote.contactEyebrow"></span>
         <h2 data-i18n="quote.contactTitle"></h2>
       </div>
       <div class="grid grid-2">
-        <div class="card-dark">
+        <div class="card-dark" data-animate>
           <div class="icon-mark t-motif" style="border-color:var(--champagne-400); color:var(--champagne-300);">T</div>
           <h3 data-i18n="quote.callCardTitle"></h3>
           <p data-i18n="quote.callCardText"></p>
           <a class="btn btn-champagne" href="tel:+3612345678">+36 1 234 5678</a>
         </div>
-        <div class="card-dark">
+        <div class="card-dark" data-animate>
           <div class="icon-mark t-motif" style="border-color:var(--champagne-400); color:var(--champagne-300);">T</div>
           <h3 data-i18n="quote.emailCardTitle"></h3>
           <p data-i18n="quote.emailCardText"></p>
@@ -79,11 +80,11 @@
 
   <section>
     <div class="container grid grid-2" style="align-items:center;">
-      <div>
+      <div data-animate>
         <span class="eyebrow" data-i18n="quote.shareEyebrow"></span>
         <h2 data-i18n="quote.shareTitle"></h2>
       </div>
-      <ul style="list-style:none; margin:0; padding:28px; background:var(--color-surface); border:1px solid var(--almond-200); border-radius:var(--radius-lg); display:grid; gap:14px;">
+      <ul style="list-style:none; margin:0; padding:28px; background:var(--color-surface); border:1px solid var(--almond-200); border-radius:var(--radius-lg); display:grid; gap:14px;" data-animate>
         <li style="display:flex; gap:10px;"><span style="color:var(--champagne-600); font-weight:700;">&#9670;</span><span data-i18n="quote.share1"></span></li>
         <li style="display:flex; gap:10px;"><span style="color:var(--champagne-600); font-weight:700;">&#9670;</span><span data-i18n="quote.share2"></span></li>
         <li style="display:flex; gap:10px;"><span style="color:var(--champagne-600); font-weight:700;">&#9670;</span><span data-i18n="quote.share3"></span></li>
@@ -98,6 +99,7 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/layout.js"></script>
+<script src="js/animate.js"></script>
 <script>ftInitLayout('quote');</script>
 </body>
 </html>

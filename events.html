@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.add('js-anim');</script>
 <title>Rendezvények — Final Table Catering</title>
 <link rel="icon" type="image/svg+xml" href="assets/images/favicon-placeholder.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,37 +29,37 @@
 
   <section>
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head center" data-animate>
         <span class="eyebrow" data-i18n="events.typesEyebrow"></span>
         <h2 data-i18n="events.typesTitle"></h2>
       </div>
       <div class="grid grid-3">
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="events.type1"></h3>
           <p data-i18n="events.type1Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="events.type2"></h3>
           <p data-i18n="events.type2Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="events.type3"></h3>
           <p data-i18n="events.type3Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="events.type4"></h3>
           <p data-i18n="events.type4Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="events.type5"></h3>
           <p data-i18n="events.type5Text"></p>
         </div>
-        <div class="card">
+        <div class="card" data-animate>
           <div class="icon-mark t-motif">T</div>
           <h3 data-i18n="events.type6"></h3>
           <p data-i18n="events.type6Text"></p>
@@ -69,7 +70,7 @@
 
   <section class="section-dark">
     <div class="container">
-      <div class="section-head center">
+      <div class="section-head center" data-animate>
         <span class="eyebrow" style="color:var(--champagne-400);" data-i18n="events.approachEyebrow"></span>
         <h2 data-i18n="events.approachTitle"></h2>
         <div class="divider divider-center"><span class="divider-mark"></span></div>
@@ -80,7 +81,7 @@
 
   <section>
     <div class="container">
-      <div class="cta-band">
+      <div class="cta-band" data-animate>
         <div>
           <h2 data-i18n="events.ctaTitle"></h2>
           <p data-i18n="events.ctaText" style="margin:0;"></p>
@@ -97,6 +98,7 @@
 
 <script src="js/i18n.js"></script>
 <script src="js/layout.js"></script>
+<script src="js/animate.js"></script>
 <script>ftInitLayout('events');</script>
 </body>
 </html>
